@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-$(LOCAL_DIR)/twrp_Q787.mk
+$(LOCAL_DIR)/omni_Q787.mk
