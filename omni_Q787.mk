@@ -1,27 +1,19 @@
-# Release name
-PRODUCT_RELEASE_NAME := Q787
+#
+# Copyright (C) 2021 The Android Open Source Project
+# Copyright (C) 2021 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 
-# Inherit from our custom product configuration
+# Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_BRAND := JASON
 PRODUCT_DEVICE := Q787
-PRODUCT_MANUFACTURER := JASON
-PRODUCT_MODEL := Q787
 PRODUCT_NAME := omni_Q787
-PRODUCT_BOARD := msm8937
-
-# enable stock zip packages flash
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.treble.enabled=false \
-    persist.sys.usb.config=mtp \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    ro.secure=1 \
-    ro.adb.secure=0 \
-    ro.allow.mock.location=0
+PRODUCT_BRAND := JASON
+PRODUCT_MODEL := ZXH_Q787
+PRODUCT_MANUFACTURER := JASON
